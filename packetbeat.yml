@@ -122,7 +122,7 @@ protocols:
 
     # Configure the ports where to listen for Redis traffic. You can disable
     # the Redis protocol by commenting out the list of ports.
-    ports: [6379,6380]
+#    ports: [6379,6380]
 
 #  thrift:
 
@@ -149,16 +149,19 @@ output:
 #    enabled: true
 #    hosts: ["{{ elasticsearch_url | d( 'http://elasticsearch.ha:9200') }}"]
 #    save_topology: true
-
+output.elasticsearch:
+  # The Elasticsearch cluster
+  hosts: ["http://localhost:9200"]
+  
   # Redis as output
   # Options:
   # host, port: where Redis is listening on
   # save_topology: specify if the topology is saved in Redis
-  redis:
-    enabled: true
-    host: aggregator.redis.service.consul
-    port: 6379
-    save_topology: true
+#  redis:
+#    enabled: true
+#    host: aggregator.redis.service.consul
+#    port: 6379
+#    save_topology: true
 
   # File as output
   # Options:
