@@ -1,2 +1,2 @@
 #!/bin/bash
-packetbeat -e -c=/etc/packetbeat/packetbeat.yml
+/usr/bin/packetbeat.sh -e -c=/etc/packetbeat/packetbeat.yml
